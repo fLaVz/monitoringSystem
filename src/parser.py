@@ -1,5 +1,6 @@
 import re, urllib
-htmlSource = urllib.urlopen("http://dominique.frin.free.fr/").read(200000)
-linksList = re.findall('<a href=(.*?)>.*?</a>',htmlSource)
-for link in linksList:
-    print link
+htmlSource = urllib.urlopen("http://www.cert.ssi.gouv.fr/site/cert-fr_alerte.rss").read(20000)
+linksList = re.findall('<item><title>.*?</title>',htmlSource)
+lastAlert = linksList[0]
+lastAlert = lastAlert[13:-8]
+print lastAlert
