@@ -4,9 +4,10 @@
 import os
 import ConfigParser
 
+
+def Rapport(date)
 config = ConfigParser.ConfigParser()
-S = '1'
-config.read('rapport'+S+'.ini')
+config.read('rapport'+date+'.ini')
 
 os.system("free -m")
 RAM = os.popen('free -m')
