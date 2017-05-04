@@ -8,7 +8,7 @@ import ConfigParser
 def Rapport_RAM(date):
 
 	config = ConfigParser.ConfigParser()
-	config.read('Model'+date+'.ini')
+	config.read('rapport'+date+'.ini')
 
 	os.system("free -m")
 	RAM = os.popen('free -m')
@@ -16,18 +16,38 @@ def Rapport_RAM(date):
 	message = RAM.readlines()
 	RAM.close()
 
-	Buff = message[0].split('    ')
-	Buff2 = message[1].split('    ')
+	nbList = []
+	keyList = []
 
+	# Enleve les \n
+	message[0] = message[0].strip()
+	message[1] = message[1].strip()
+	
+	# Sépare par chaque espace
+	Buff = message[0].split(' ')
+	Buff2 = message[1].split(' ')
+	
+	# Test si ce ne sont que des chaines de  caracatere sans espace
+	for i in Buff:
+		if i.isalpha():
+			keyList.append(i)
+
+	# Teste si c'est une chaine de nombre
+	for i in Buff2:
+		if i.isdigit():
+			nbList.append(i)
+
+	# Ecrit dans le fichier
 	#config.add_section('RAM')
-	config.set('RAM', Buff[3].replace(" ",""), Buff2[2].replace(" ",""))	#total = 3833
-	config.set('RAM', Buff[4].replace(" ",""), Buff2[3].replace(" ",""))	#used = 2453
-	config.set('RAM', Buff[5].replace(" ",""), Buff2[5].replace(" ",""))	#free = 1380
-	config.set('RAM', Buff[6].replace(" ",""), Buff2[7].replace(" ",""))	#shared = 300
-	config.set('RAM', Buff[7].replace(" ",""), Buff2[9].replace(" ",""))	#buffers = 120
-	config.set('RAM', Buff[8].replace(" ","").replace("\n",""), Buff2[9].replace(" ","").replace("\n",""))	#cached = 1252
-	config.write(open('Model'+date+'.ini','w'))
+	config.set('RAM', keyList[0], nbList[0])	#total = 3833
+	config.set('RAM', keyList[1], nbList[1])	#used = 2453
+	config.set('RAM', keyList[2], nbList[2])	#free = 1380
+	config.set('RAM', keyList[3], nbList[3])	#shared = 300
+	config.set('RAM', keyList[4], nbList[4])	#buffers = 120
+	config.set('RAM', keyList[5], nbList[5])
+	config.write(open('rapport'+date+'.ini','w'))
 
-	print Buff
+	print nbList
+	print keyList
 	#print message[1].replace(" ","/")
 #TODO après avoir récupérer les infos il faut les écrire sous la bonne forme dans un fichier .ini

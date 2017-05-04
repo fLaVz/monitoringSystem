@@ -2,4 +2,4 @@ import Test_stockage
 
 
 
-Test_stockage.Rapport_RAM("")
+Test_stockage.Rapport_RAM("3")
