@@ -1,0 +1,16 @@
+[USERS]
+
+[PROCESS]
+
+[CPU]
+
+[DISK]
+
+[RAM]
+total = 3832
+used = 3490
+free = 
+shared = 
+buffers = 
+cached = 238
+

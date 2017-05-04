@@ -29,5 +29,5 @@ def Rapport_RAM(date):
 	config.write(open('Model'+date+'.ini','w'))
 
 	print Buff
-	#print message[1].replace(" ","/")
+	print message[1].replace(" ","/")
 #TODO après avoir récupérer les infos il faut les écrire sous la bonne forme dans un fichier .ini

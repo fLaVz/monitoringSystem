@@ -23,7 +23,7 @@ print "**********************************\n"
 print "\n************** CPU ***************"
 
 print "Number of cores : " + str(psutil.cpu_count()) + "\n"
-config.set('CPU', "cores", str(psutil.cpu_count()))
+config.set('CPU', Buff[3].replace(" ",""), Buff2[2].replace(" ",""))	#total = 3833
 
 freq = psutil.cpu_freq()
 currentFreq = freq[0]
