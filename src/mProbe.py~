@@ -46,7 +46,7 @@ def getRAM(date, host):
 	config.set('RAM', keyList[3], nbList[3])	#shared = 300
 	config.set('RAM', keyList[4], nbList[4])	#buffers = 120
 	config.set('RAM', keyList[5], nbList[5])
-	config.write(open('rapport'+date+'.ini','w'))
+	config.write(open(host+'_'+date+'.ini','w'))
 
 	print nbList
 	print keyList

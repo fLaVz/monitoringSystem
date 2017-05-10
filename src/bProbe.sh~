@@ -1,0 +1,5 @@
+#!/bin/bash
+
+who | python -c 'import getUser; print getUser.get_foo()'
+
+#ps -f | python getProcess.py

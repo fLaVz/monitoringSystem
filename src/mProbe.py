@@ -48,7 +48,7 @@ def getRAM(date, host):
 	config.set('RAM', keyList[5], nbList[5])
 	config.write(open(host+'_'+date+'.ini','w'))
 
-	print nbList
-	print keyList
+	#print nbList
+	#print keyList
 	#print message[1].replace(" ","/")
 #TODO après avoir récupérer les infos il faut les écrire sous la bonne forme dans un fichier .ini
