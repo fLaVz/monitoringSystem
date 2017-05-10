@@ -5,10 +5,10 @@ import os
 import ConfigParser
 
 
-def Rapport_RAM(date, id):
+def getRAM(date, host):
 
 	config = ConfigParser.ConfigParser()
-	config.read('rapport'+date+'.ini')
+	config.read(host+'_'+date+'.ini')
 
 	os.system("free -m")
 	RAM = os.popen('free -m')
@@ -38,7 +38,7 @@ def Rapport_RAM(date, id):
 			nbList.append(i)
 
 	# Ecrit dans le fichier
-	config.add_section('PC'+id)
+	config.add_section('PC: '+host)
 	config.add_section('RAM')
 	config.set('RAM', keyList[0], nbList[0])	#total = 3833
 	config.set('RAM', keyList[1], nbList[1])	#used = 2453
@@ -46,7 +46,7 @@ def Rapport_RAM(date, id):
 	config.set('RAM', keyList[3], nbList[3])	#shared = 300
 	config.set('RAM', keyList[4], nbList[4])	#buffers = 120
 	config.set('RAM', keyList[5], nbList[5])
-	config.write(open('rapport'+date+'.ini','w'))
+	config.write(open(host+'_'+date+'.ini','w'))
 
 	print nbList
 	print keyList
