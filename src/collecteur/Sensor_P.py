@@ -1,14 +1,5 @@
 import psutil
-
 import time
-
-
-''' // Time function
-starttime=time.time()
-while True:
-  print "tick"
-  time.sleep(5.0 - ((time.time() - starttime) % 5.0))
-'''
 
 
 # USER PART
@@ -23,7 +14,7 @@ print "**********************************\n"
 print "\n************** CPU ***************"
 
 print "Number of cores : " + str(psutil.cpu_count()) + "\n"
-config.set('CPU', "cores", str(psutil.cpu_count()))
+'''config.set('CPU', "cores", str(psutil.cpu_count()))'''
 
 freq = psutil.cpu_freq()
 currentFreq = freq[0]
