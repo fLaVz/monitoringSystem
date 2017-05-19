@@ -1,6 +1,7 @@
 import os
 import ConfigParser
 import mailer
+from termcolor import colored, cprint
 
 
 config = ConfigParser.ConfigParser()
@@ -11,19 +12,17 @@ config.sections()
 cpuMax = config.get('CPU', 'maxfrequency')
 HDDspace = config.get('HDD', 'space')
 
-print cpuMax
-
 if int(cpuMax) > 3500:
-	print "cpu load too high"
+	cprint ("cpu load too high: " + cpuMax + "Mhz", 'white', 'on_red')
 	#mailer.sendMailAlert("cpu load too high")
 else:
-	print "cpu ok"
+	cprint ("cpu ok: " + cpuMax + "Mhz", 'white', 'on_green')
 
 if int(HDDspace) > 90:
-	print "HDD almost full" 
+	cprint ("HDD almost full : " + HDDspace + "% used", 'white', 'on_red')
 	#mailer.sendMailAlert("HDD almost full")
-else:
-	print "Disk ok"
+else: 
+	cprint ("Disk ok: " + HDDspace + "% used", 'white', 'on_green')
 
 files = []
 files = os.listdir('.')
