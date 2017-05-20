@@ -37,16 +37,19 @@ def check(date, host, cpuIn, hddIn, ramIn, histIn):
 	else: 
 		cprint ("Ram usage ok: " + str(ramPercent) + "% used", 'white', 'on_green')
 
-
-
-
-
-
 	# Gestion d'historique
 	files = []
 	files = os.listdir('logs/')
 
+	# on range en ordre chronologique	
+	files.sort()
+	# on inverse pour supprimer les plus vieux fichiers
+	files.reverse()
+	#print files
 	for i in range(len(files)):
 		if i >= histIn:
 			os.remove('logs/'+files[i])
+			#print "REMOVED : "+ files[i]
+
+	del files
 	print "\n"
