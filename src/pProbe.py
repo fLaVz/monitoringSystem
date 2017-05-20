@@ -1,29 +1,35 @@
 import psutil
 import ConfigParser
+from termcolor import colored, cprint
 
 def getCPU(date, host):
 
 	config = ConfigParser.ConfigParser()
-	config.read(host+'_'+date+'.ini')
+	config.read('logs/'+host+'_'+date+'.ini')
 
 
 	# CPU PART
 	freq = psutil.cpu_freq()
 	currentFreq = freq[0]
-	maxFreq = freq[1]
-	minFreq = freq[2]
+	minFreq = freq[1]
+	maxFreq = freq[2]
 
 	config.add_section('CPU')
 	config.set('CPU', 'CurrentFrequency', str(currentFreq))	#CurrentFrequency
 	config.set('CPU', 'MaxFrequency', str(maxFreq))	#MaxFrequency
 	config.set('CPU', 'MinFrequency', str(minFreq))	#MinFrequency
 
-	config.write(open(host+'_'+date+'.ini','w'))
+	config.write(open('logs/'+host+'_'+date+'.ini','w'))
+
+	cprint ("************** CPU MODULE ********************", 'cyan', 'on_white')
+	print "CPU Current Frequency: " + str(currentFreq)
+	print "\n"
+
 
 def getHDD(date, host):
 
 	config = ConfigParser.ConfigParser()
-	config.read(host+'_'+date+'.ini')
+	config.read('logs/'+host+'_'+date+'.ini')
 
 	# DISK USAGE PART
 	hdd = psutil.disk_usage('/')
@@ -39,5 +45,9 @@ def getHDD(date, host):
 	config.set('HDD', 'free', free)
 	config.set('HDD', 'percent', percent)
 
-	config.write(open(host+'_'+date+'.ini','w'))
+	config.write(open('logs/'+host+'_'+date+'.ini','w'))
+
+	cprint ("************** HDD MODULE ********************", 'cyan', 'on_white')
+	print "HDD space available: " + str(free)
+	print "\n"
 

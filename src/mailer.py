@@ -2,12 +2,12 @@ import smtplib
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 
-def sendMailAlert(message):
+def sendMailAlert(host, message):
 
 	msg = MIMEMultipart()
 	msg['From'] = 'julien.flav.delvaux@gmail.com'
 	msg['To'] = 'julien.flav.delvaux@gmail.com'
-	msg['Subject'] = 'ServerAlert' 
+	msg['Subject'] = host+'ServerAlert' 
 	msg.attach(MIMEText(message))
 	mailserver = smtplib.SMTP('smtp.gmail.com', 587)
 	mailserver.ehlo()

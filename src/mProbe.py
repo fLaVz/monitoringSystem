@@ -3,13 +3,15 @@
 
 import os
 import ConfigParser
+from termcolor import colored, cprint
 
 
 def getRAM(date, host):
 
 	config = ConfigParser.ConfigParser()
-	config.read(host+'_'+date+'.ini')
+	config.read('logs/'+host+'_'+date+'.ini')
 
+	cprint ("************** RAM MODULE ********************", 'cyan', 'on_white') 
 	os.system("free -m")
 	RAM = os.popen('free -m')
 
@@ -38,10 +40,6 @@ def getRAM(date, host):
 			nbList.append(i)
 
 
-	print nbList
-	print keyList
-
-
 	# Ecrit dans le fichier
 	config.add_section('PC: '+host)
 	config.add_section('RAM')
@@ -51,7 +49,8 @@ def getRAM(date, host):
 	config.set('RAM', keyList[2], nbList[3])	#shared = 300
 	config.set('RAM', keyList[2], nbList[4])	#buffers = 120
 	config.set('RAM', keyList[2], nbList[5])
-	config.write(open(host+'_'+date+'.ini','w'))
+	config.write(open('logs/'+host+'_'+date+'.ini','w'))
+	print "\n"
 
 	#print nbList
 	#print keyList
