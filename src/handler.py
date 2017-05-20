@@ -5,7 +5,7 @@ from termcolor import colored, cprint
 
 
 #gestion de crise
-def check(date, host, cpuIn, hddIn, ramIn):
+def check(date, host, cpuIn, hddIn, ramIn, histIn):
 
 	cprint ("************** CRITICAL MODULE ********************", 'cyan', 'on_white')
 
@@ -40,8 +40,13 @@ def check(date, host, cpuIn, hddIn, ramIn):
 
 
 
-	files = []
-	files = os.listdir('.')
 
-	print files[len(os.listdir('.'))-1]
+
+	# Gestion d'historique
+	files = []
+	files = os.listdir('logs/')
+
+	for i in range(len(files)):
+		if i >= histIn:
+			os.remove('logs/'+files[i])
 	print "\n"
