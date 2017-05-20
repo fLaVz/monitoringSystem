@@ -2,8 +2,10 @@
 # Récupérer une sortie de commande pour la stocker dans un format de donnée donné
 
 import os
+import socket
 import ConfigParser
 from termcolor import colored, cprint
+
 
 
 def getRAM(date, host):
@@ -52,7 +54,26 @@ def getRAM(date, host):
 	config.write(open('logs/'+host+'_'+date+'.ini','w'))
 	print "\n"
 
-	#print nbList
-	#print keyList
-	#print message[1].replace(" ","/")
-#TODO après avoir récupérer les infos il faut les écrire sous la bonne forme dans un fichier .ini
+
+	# Envoi au server
+	hote = "localhost"
+	port = 15555
+
+	mysocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	mysocket.connect((hote, port))
+	print "Connection on {}".format(port)
+
+	mysocket.send("************** RAM MODULE ********************\n")
+	mysocket.send(keyList[0])
+	mysocket.send(" : ")
+	mysocket.send(nbList[0]+"\n")
+	
+	mysocket.send(keyList[1])
+	mysocket.send(" : ")
+	mysocket.send(nbList[1]+"\n")
+
+	mysocket.send(keyList[2])
+	mysocket.send(" : ")
+	mysocket.send(nbList[2]+"\n")
+	
+	mysocket.close()
