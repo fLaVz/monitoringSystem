@@ -1,10 +1,10 @@
 import psutil
-import ConfigParser
+import configparser
 
 def getCPU(date, host):
 
-	config = ConfigParser.ConfigParser()
-	config.read(host+'_'+date+'.ini')
+	#config = ConfigParser.ConfigParser()
+	#config.read(host+'_'+date+'.ini')
 
 
 	# CPU PART

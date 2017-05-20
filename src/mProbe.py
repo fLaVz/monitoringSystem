@@ -2,13 +2,13 @@
 # Récupérer une sortie de commande pour la stocker dans un format de donnée donné
 
 import os
-import ConfigParser
+import configparser
 
 
 def getRAM(date, host):
 
-	config = ConfigParser.ConfigParser()
-	config.read(host+'_'+date+'.ini')
+	#config = ConfigParser.ConfigParser()
+	#config.read(host+'_'+date+'.ini')
 
 	os.system("free -m")
 	RAM = os.popen('free -m')
