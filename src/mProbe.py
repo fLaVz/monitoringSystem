@@ -2,13 +2,13 @@
 # Récupérer une sortie de commande pour la stocker dans un format de donnée donné
 
 import os
-import configparser
+import ConfigParser
 
 
 def getRAM(date, host):
 
-	#config = ConfigParser.ConfigParser()
-	#config.read(host+'_'+date+'.ini')
+	config = ConfigParser.ConfigParser()
+	config.read(host+'_'+date+'.ini')
 
 	os.system("free -m")
 	RAM = os.popen('free -m')
@@ -37,15 +37,20 @@ def getRAM(date, host):
 		if i.isdigit():
 			nbList.append(i)
 
+
+	print nbList
+	print keyList
+
+
 	# Ecrit dans le fichier
 	config.add_section('PC: '+host)
 	config.add_section('RAM')
 	config.set('RAM', keyList[0], nbList[0])	#total = 3833
 	config.set('RAM', keyList[1], nbList[1])	#used = 2453
 	config.set('RAM', keyList[2], nbList[2])	#free = 1380
-	config.set('RAM', keyList[3], nbList[3])	#shared = 300
-	config.set('RAM', keyList[4], nbList[4])	#buffers = 120
-	config.set('RAM', keyList[5], nbList[5])
+	config.set('RAM', keyList[2], nbList[3])	#shared = 300
+	config.set('RAM', keyList[2], nbList[4])	#buffers = 120
+	config.set('RAM', keyList[2], nbList[5])
 	config.write(open(host+'_'+date+'.ini','w'))
 
 	#print nbList

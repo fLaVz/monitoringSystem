@@ -1,4 +1,5 @@
 import re, urllib
+from termcolor import colored, cprint
 
 def parse():
 
@@ -6,4 +7,4 @@ def parse():
 	linksList = re.findall('<item><title>.*?</title>',htmlSource)
 	lastAlert = linksList[0]
 	lastAlert = lastAlert[13:-8]
-	print lastAlert
+	cprint (lastAlert, 'white', 'on_red')
