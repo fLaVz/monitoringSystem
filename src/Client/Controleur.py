@@ -3,6 +3,7 @@ import mProbe
 import pProbe
 import handler
 import sender
+import graph
 
 import requestHostname
 import datetime
@@ -10,7 +11,9 @@ import time
 import parser
 import subprocess
 import ConfigParser
-import flasker
+import os
+
+from os.path import exists
 
 
 print "********************** Bienvenue dans la gestion des sondes ******************************\n"
@@ -55,5 +58,9 @@ while True:
 	sender.sendRequest(dateHour, hostname)
 
 	F.close()
+
+	graph.plotHistogramm("RAM")
+	graph.plotHistogramm("CPU")
+	graph.plotHistogramm("HDD")
 	#Time
 	time.sleep(5.0 - ((time.time() - starttime) % 5.0))
