@@ -4,11 +4,11 @@
 
 ## Bonus
 
-[x] CPU
-[x] RAM
-[x] Disque Dur
-[x] Utilisateur courant
-[] Processus
+- [x] CPU
+- [x] RAM
+- [x] Disque Dur
+- [x] Utilisateur courant
+- [] Processus
 
 
 ## Library utilisées
@@ -19,9 +19,9 @@ psutil
 
 ## Bonus
 
-[x] Format standart ".ini"
-[] Sauvegarde/Restauration 
-[x] L'ajout d'une machine sans changer le code
+- [x] Format standart ".ini"
+- [] Sauvegarde/Restauration 
+- [x] L'ajout d'une machine sans changer le code
 
 ## Library utilisées
 
