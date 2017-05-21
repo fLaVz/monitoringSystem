@@ -81,4 +81,12 @@ Tout comme les graphes dans :
 
 
 Aussi, les sondes font un rapport toutes les 5 secondes (pour les besoins d'un test rapide).  
-La boucle de temps peut etre changé dans le Controleur.py -> time.sleep.  
+La boucle de temps peut etre changé dans le Controleur.py -> time.sleep. 
+
+
+Enfin, l'envoi des mails a été désactivé pour éviter de spammer la boite mail.  
+Pour les réactiver il suffit décommenter les lignes 24, 30 et 36 dans :  
+> src/Client/handler.py  
+
+Et de mettre les informations nescessaires et décrites dans :  
+> src/Client/mailer.py
