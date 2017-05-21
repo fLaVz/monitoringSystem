@@ -66,8 +66,8 @@ Pour lancer la collecte des infos sur chaque machine :
 A l'execution du controleur, paramètres seront demandés:
 * Le seuil critique concernant la vitesse du processeur
 * Le pourcentage d'utilisation critique du Disque dur  
-* Me pourcentage d'utilisation critique de la Ram
-
+* Le pourcentage d'utilisation critique de la Ram
+* Le nombre de fichiers qui seront gardés sur la machine
 
 Le serveur va attendre les requetes des différentes machines.  
 Quand il reçoit une requete (les infos d'une machine) il va l'afficher et le stocker dans le dossier correspondant  
