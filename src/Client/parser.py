@@ -1,7 +1,8 @@
 import re, urllib
 from termcolor import colored, cprint
+import ConfigParser
 
-def parse():
+def parse(date, host):
 
 	cprint ("************** CERTALERT MODULE ********************", 'cyan', 'on_white')
 	
@@ -10,4 +11,14 @@ def parse():
 	lastAlert = linksList[0]
 	lastAlert = lastAlert[13:-8]
 	cprint (lastAlert, 'white', 'on_red')
+
+	lastAlert = lastAlert.replace(" ", "_")
+
+	config = ConfigParser.ConfigParser()
+	config.read('logs/'+host+'_'+date+'.ini')
+
+	config.add_section('ALERT')
+	config.set('ALERT', 'CertAlert', lastAlert)
+	config.write(open('logs/'+host+'_'+date+'.ini','w'))
+
 	print "\n"

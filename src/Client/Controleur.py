@@ -37,15 +37,18 @@ while True:
 
 	print "******************** FROM " + hostname + " **************************"
 
-	#Parse
-	parser.parse()
+	
 
 	#Probe Part
 	mProbe.getRAM(dateHour,hostname)
 
 	pProbe.getCPU(dateHour,hostname)
 	pProbe.getHDD(dateHour,hostname)
+
 	subprocess.call(['./bProbe.sh'])
+
+	#Parse
+	parser.parse(dateHour, hostname)
 
 	handler.check(dateHour,hostname, cpuIn, hddIn, ramIn, histIn)
 

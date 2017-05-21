@@ -56,3 +56,24 @@ Projet entierement disponible [ici](https://github.com/fLaVz/monitoringSystem)
 * flask
 
 # Fonctionnement
+
+Pour lancer le server : 
+> python flasker.py
+
+Pour lancer la collecte des infos sur chaque machine :
+> python Controleur.py
+
+
+Le serveur va attendre les requetes des différentes machines.  
+Quand il reçoit une requete (les infos d'une machine) il va l'afficher et le stocker dans le dossier correspondant  
+> serverLogs/
+
+Les données des rapports sont stockées aussi localement dans :  
+> logs/
+
+Tout comme les graphes dans :  
+> graph/
+
+
+Aussi, les sondes font un rapport toutes les 5 secondes (pour les besoins d'un test rapide).  
+La boucle de temps peut etre changé dans le Controleur.py -> time.sleep.  
