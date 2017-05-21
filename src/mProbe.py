@@ -56,7 +56,7 @@ def getRAM(date, host):
 
 
 	# Envoi au server
-	hote = "localhost"
+	"""hote = "localhost"
 	port = 15555
 
 	mysocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -76,4 +76,4 @@ def getRAM(date, host):
 	mysocket.send(" : ")
 	mysocket.send(nbList[2]+"\n")
 	
-	mysocket.close()
+	mysocket.close()"""

@@ -29,7 +29,7 @@ def getCPU(date, host):
 	print "\n"
 
 	# Envoi au server
-	hote = "localhost"
+	"""hote = "localhost"
 	port = 15555
 
 	mysocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -51,7 +51,7 @@ def getCPU(date, host):
 	mysocket.send(" : ")
 	mysocket.send(str(maxFreq)+"\n")
 	
-	mysocket.close()
+	mysocket.close()"""
 
 
 
