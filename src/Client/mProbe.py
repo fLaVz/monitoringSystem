@@ -56,24 +56,4 @@ def getRAM(date, host):
 
 
 	# Envoi au server
-	"""hote = "localhost"
-	port = 15555
-
-	mysocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	mysocket.connect((hote, port))
-	print "Connection on {}".format(port)
-
-	mysocket.send("************** RAM MODULE ********************\n")
-	mysocket.send(keyList[0])
-	mysocket.send(" : ")
-	mysocket.send(nbList[0]+"\n")
 	
-	mysocket.send(keyList[1])
-	mysocket.send(" : ")
-	mysocket.send(nbList[1]+"\n")
-
-	mysocket.send(keyList[2])
-	mysocket.send(" : ")
-	mysocket.send(nbList[2]+"\n")
-	
-	mysocket.close()"""

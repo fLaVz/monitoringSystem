@@ -28,32 +28,6 @@ def getCPU(date, host):
 	print "CPU Current Frequency: " + str(currentFreq)
 	print "\n"
 
-	# Envoi au server
-	"""hote = "localhost"
-	port = 15555
-
-	mysocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	mysocket.connect((hote, port))
-	#print "Connection on {}".format(port)
-
-	mysocket.send("From " + host + "\n")
-
-	mysocket.send("************** CPU MODULE ********************\n")
-	mysocket.send("Current Frequency")
-	mysocket.send(" : ")
-	mysocket.send(str(currentFreq)+"\n")
-	
-	mysocket.send("Min Frequency")
-	mysocket.send(" : ")
-	mysocket.send(str(minFreq)+"\n")
-
-	mysocket.send("Max Frequency")
-	mysocket.send(" : ")
-	mysocket.send(str(maxFreq)+"\n")
-	
-	mysocket.close()"""
-
-
 
 def getHDD(date, host):
 

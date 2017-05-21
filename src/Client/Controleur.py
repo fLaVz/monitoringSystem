@@ -1,12 +1,15 @@
 import mProbe
 import pProbe
 import handler
+import sender
 
 import requestHostname
 import datetime
 import time
 import parser
 import subprocess
+import ConfigParser
+import flasker
 
 
 print "********************** Bienvenue dans la gestion des sondes ******************************\n"
@@ -31,6 +34,8 @@ while True:
 	#ini File
 	F = open('logs/'+hostname+'_'+dateHour+'.ini','w')
 
+	print "******************** FROM " + hostname + " **************************"
+
 	#Parse
 	parser.parse()
 
@@ -44,7 +49,8 @@ while True:
 
 	handler.check(dateHour,hostname, cpuIn, hddIn, ramIn, histIn)
 
-	F.close()
+	sender.sendRequest(dateHour, hostname)
 
+	F.close()
 	#Time
 	time.sleep(5.0 - ((time.time() - starttime) % 5.0))
