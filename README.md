@@ -1,8 +1,8 @@
 # Mini Projet Admninistration système
 
-# 1. Collecte d'informations
+## 1. Collecte d'informations
 
-## Bonus
+### Bonus
 
 - [x] CPU
 - [x] RAM
@@ -11,27 +11,27 @@
 - [ ] Processus
 
 
-## Library utilisées
-psutil
+### Library utilisées
+* psutil
 
 
-# 2. Stockage & Collecte web
+## 2. Stockage & Collecte web
 
-## Bonus
+### Bonus
 
 - [x] Format standart ".ini"
 - [x] Sauvegarde
 - [x] L'ajout d'une machine sans changer le code
 
-## Library utilisées
+### Library utilisées
 
 * ConfigParser : pour les fichiers ".ini"
 * Re : pour les expressions régulières
 * urllib : pour parser le web
 
-# 3. Affichage et Alerte
+## 3. Affichage et Alerte
 
-## Bonus
+### Bonus
 
 - [x] Affichage en couleur de certaines infos
 - [x] Critères de situation de crise configurable
@@ -39,14 +39,16 @@ psutil
 - [ ] Contenu de l'email parametrable  
 - [x] Envoie des email via le serveur smtp de l'université
 
-## Library utilisées
+### Library utilisées
 
 * smtpLib
 * termcolor
 * gnuplot
 
-# 4. Communication
+## 4. Communication
 
-## Bonus
+### Bonus
 
-## Library utilisées
+### Library utilisées
+
+# Fonctionnement
