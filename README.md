@@ -58,10 +58,15 @@ Projet entierement disponible [ici](https://github.com/fLaVz/monitoringSystem)
 # Fonctionnement
 
 Pour lancer le server : 
-> python flasker.py
+> python flasker.py  
 
 Pour lancer la collecte des infos sur chaque machine :
-> python Controleur.py
+> python Controleur.py  
+
+A l'execution du controleur, paramètres seront demandés:
+* Le seuil critique concernant la vitesse du processeur
+* Le pourcentage d'utilisation critique du Disque dur  
+* Me pourcentage d'utilisation critique de la Ram
 
 
 Le serveur va attendre les requetes des différentes machines.  
