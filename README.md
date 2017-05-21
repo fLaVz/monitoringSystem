@@ -9,7 +9,7 @@ Projet entierement disponible [ici](https://github.com/fLaVz/monitoringSystem)
 - [x] RAM
 - [x] Disque Dur
 - [x] Utilisateur courant
-- [ ] Processus
+- [ ] Processus (liste trop longue pour etre mise dans le fichier) 
 
 
 ### Library utilisées

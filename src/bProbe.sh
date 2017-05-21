@@ -1,20 +1,21 @@
 #!/bin/bash
 
-#who | python -c 'import getUser; print getUser.fonction1()'
-
-#ps -f | python getProcess.py
-
-
-
-#source <(grep = logs/flavUNIX_2017-05-21_14:27:07.ini | sed 's/ *= */=/g') 
-
-
-host=$(hostname)
+user=$(whoami)
 proc=$(ps -f)
 
-echo "[USER]" >> "logs/flavUNIX_2017-05-21_14:27:12.ini"
-echo "user = $host" >> "logs/flavUNIX_2017-05-21_14:27:12.ini"
+host=$(hostname)
+mdate=$(date +%Y-%m-%d_%H:%M:%S)
 
-echo ""
-echo "[PROCESS]" >>
-echo ""
+apath=$host"_"
+bpath=$apath$mdate
+
+fullpath="logs/"$bpath".ini"
+
+echo $apath
+echo $fullpath
+
+echo "[USER]" >> $fullpath
+echo "user = $user" >> $fullpath
+
+echo "" >> $fullpath
+echo "[PROCESS]" >> $fullpath

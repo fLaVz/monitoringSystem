@@ -1,5 +1,4 @@
 import mProbe
-#import bProbe
 import pProbe
 import handler
 
@@ -38,10 +37,10 @@ while True:
 	#Probe Part
 	mProbe.getRAM(dateHour,hostname)
 
-#	subprocess.call(['./bProbe.sh'])
-
 	pProbe.getCPU(dateHour,hostname)
 	pProbe.getHDD(dateHour,hostname)
+
+	subprocess.call(['./bProbe.sh'])
 
 	handler.check(dateHour,hostname, cpuIn, hddIn, ramIn, histIn)
 
