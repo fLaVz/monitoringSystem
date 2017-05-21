@@ -11,9 +11,6 @@ bpath=$apath$mdate
 
 fullpath="logs/"$bpath".ini"
 
-echo $apath
-echo $fullpath
-
 echo "[USER]" >> $fullpath
 echo "user = $user" >> $fullpath
 

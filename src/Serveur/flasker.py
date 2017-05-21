@@ -1,16 +1,24 @@
+#-*- coding: utf-8 -*-
 from flask import Flask
 from flask import request
+import os
 
 
 
 def writeInFile(data):
 
 	path = data.partition(".ini")[0]
-	print data
+	hostname = path.partition("_")[0]
 
-	F = open('serverLogs/'+path+'.ini','w')
+	if os.path.exists('serverLogs/'+hostname+'/') == False:		# Pour ranger par machine les fichers de configuration, crée un dossier dynamiquement
+		os.mkdir('serverLogs/'+hostname+'/')
+	else:
+		print "Folder already exists; files stored in it"
+
+	F = open('serverLogs/'+hostname+'/'+path+'.ini','w')
 	F.write(data)
 	F.close()
+	print data
 
 
 app = Flask(__name__)

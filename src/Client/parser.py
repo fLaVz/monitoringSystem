@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 import re, urllib
 from termcolor import colored, cprint
 import ConfigParser
