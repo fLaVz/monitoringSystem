@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 import mProbe
 import pProbe
 import handler
@@ -44,7 +45,6 @@ while True:
 
 	pProbe.getCPU(dateHour,hostname)
 	pProbe.getHDD(dateHour,hostname)
-
 	subprocess.call(['./bProbe.sh'])
 
 	handler.check(dateHour,hostname, cpuIn, hddIn, ramIn, histIn)

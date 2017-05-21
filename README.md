@@ -49,7 +49,10 @@ Projet entierement disponible [ici](https://github.com/fLaVz/monitoringSystem)
 ## 4. Communication
 
 ### Bonus
+- [ ] Module web quireprend les informations du client CLI
 
 ### Library utilisées
+
+* flask
 
 # Fonctionnement

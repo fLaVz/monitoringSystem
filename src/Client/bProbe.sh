@@ -19,3 +19,4 @@ echo "user = $user" >> $fullpath
 
 echo "" >> $fullpath
 echo "[PROCESS]" >> $fullpath
+# liste des processus un peu longue pour etre stockée
