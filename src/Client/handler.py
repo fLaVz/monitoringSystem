@@ -1,6 +1,6 @@
 import os
-import ConfigParser
-import mailer
+import configparser
+#import mailer
 from termcolor import colored, cprint
 
 
@@ -52,4 +52,4 @@ def check(date, host, cpuIn, hddIn, ramIn, histIn):
 			#print "REMOVED : "+ files[i]
 
 	del files
-	print "\n"
+	print("\n")

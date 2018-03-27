@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 import requests
-import ConfigParser
+import configparser
 
 def sendRequest(date, host):
 

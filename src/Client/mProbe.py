@@ -3,7 +3,7 @@
 
 import os
 import socket
-import ConfigParser
+import configparser
 from termcolor import colored, cprint
 
 
@@ -52,7 +52,7 @@ def getRAM(date, host):
 	config.set('RAM', keyList[2], nbList[4])	#buffers = 120
 	config.set('RAM', keyList[2], nbList[5])
 	config.write(open('logs/'+host+'_'+date+'.ini','w'))
-	print "\n"
+	print("\n")
 
 
 	# Envoi au server

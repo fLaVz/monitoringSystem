@@ -1,5 +1,5 @@
 import psutil
-import ConfigParser
+import configparser
 import socket
 from termcolor import colored, cprint
 
@@ -23,10 +23,10 @@ def getCPU(date, host):
 	config.write(open('logs/'+host+'_'+date+'.ini','w'))
 
 	cprint ("************** CPU MODULE ********************", 'cyan', 'on_white')
-	print "CPU Max Frequency: " + str(maxFreq)
-	print "CPU min Frequency: " + str(minFreq)
-	print "CPU Current Frequency: " + str(currentFreq)
-	print "\n"
+	print("CPU Max Frequency: " + str(maxFreq))
+	print("CPU min Frequency: " + str(minFreq))
+	print("CPU Current Frequency: " + str(currentFreq))
+	print("\n")
 
 
 def getHDD(date, host):
@@ -51,9 +51,9 @@ def getHDD(date, host):
 	config.write(open('logs/'+host+'_'+date+'.ini','w'))
 
 	cprint ("************** HDD MODULE ********************", 'cyan', 'on_white')
-	print "HDD total space " + str(total)
-	print "HDD space available: " + str(free)
-	print "HDD space used " + str(used)
-	print "HDD space used in % " + str(percent)
-	print "\n"
+	print("HDD total space " + str(total))
+	print("HDD space available: " + str(free))
+	print("HDD space used " + str(used))
+	print("HDD space used in % " + str(percent))
+	print("\n")
 

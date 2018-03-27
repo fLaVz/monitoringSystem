@@ -10,13 +10,13 @@ import datetime
 import time
 import parser
 import subprocess
-import ConfigParser
+import configparser
 import os
 
 from os.path import exists
 
 
-print "********************** Bienvenue dans la gestion des sondes ******************************\n"
+print("********************** Bienvenue dans la gestion des sondes ******************************\n")
 cpuIn = input("Veuillez entrer une valeur de situation de crise pour le CPU (en MHz) :")
 hddIn = input("Veuillez entrer une valeur de situation de crise pour le Disque (en %) :")
 ramIn = input("Veuillez entrer une valeur de situation de crise pour la RAM (en %) :")
@@ -38,7 +38,7 @@ while True:
 	#ini File
 	F = open('logs/'+hostname+'_'+dateHour+'.ini','w')
 
-	print "******************** FROM " + hostname + " **************************"
+	print("******************** FROM " + hostname + " **************************")
 
 	
 

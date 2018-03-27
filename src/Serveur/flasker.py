@@ -13,12 +13,12 @@ def writeInFile(data):
 	if os.path.exists('serverLogs/'+hostname+'/') == False:		# Pour ranger par machine les fichers de configuration, crée un dossier dynamiquement
 		os.mkdir('serverLogs/'+hostname+'/')
 	else:
-		print "Folder already exists; files stored in it"
+		print("Folder already exists; files stored in it")
 
 	F = open('serverLogs/'+hostname+'/'+path+'.ini','w')
 	F.write(data)
 	F.close()
-	print data
+	print(data)
 
 
 app = Flask(__name__)
